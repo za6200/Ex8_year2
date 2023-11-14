@@ -86,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void save(View view) {
+        /*
+        function will add the edit text to text view and save it in file
+        param view: when button clicked
+         */
         userInputText = readFromFile();
         userInputText += editText.getText().toString();
         try {
@@ -103,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void reset(View view) {
+        /*
+        function will reset all data file and edit text and text view
+        param view: when button clicked
+         */
         try {
             FileOutputStream fOS = openFileOutput(FILENAME, MODE_PRIVATE);
             OutputStreamWriter oSW = new OutputStreamWriter(fOS);
@@ -119,6 +127,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void exit(View view) {
+        /*
+        function will exit the program and save the data for next time
+        param view: when button clicked
+         */
         userInputText = readFromFile();
         userInputText += editText.getText().toString();
         try {
@@ -137,6 +149,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String readFromFile() {
+        /*
+        function will read from the file
+         */
         try {
             FileInputStream fIS = openFileInput(FILENAME);
             InputStreamReader iSR = new InputStreamReader(fIS);
