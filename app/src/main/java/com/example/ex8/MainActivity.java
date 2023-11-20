@@ -63,27 +63,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        /**
-         * function will make the option menu
-         * param menu: the menu
-         */
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        String st = item.getTitle().toString();
-        if (st.equals("credit")) {
-            try {
-                startActivity(credits);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            /**
+             * function will make the option menu
+             * param menu: the menu
+             */
+            getMenuInflater().inflate(R.menu.main, menu);
+            return true;
         }
-        return true;
-    }
+
+        public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+            String st = item.getTitle().toString();
+            if (st.equals("credit")) {
+                try {
+                    startActivity(credits);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            return true;
+        }
 
     public void save(View view) {
         /*
