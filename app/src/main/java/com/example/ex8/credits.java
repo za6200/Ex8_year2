@@ -1,9 +1,12 @@
 package com.example.ex8;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,7 +28,21 @@ public class credits extends AppCompatActivity {
         backActivity = new Intent(this, MainActivity.class);
     }
 
-    public void back(View view) {
-        startActivity(backActivity);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        String st = item.getTitle().toString();
+        if (st.equals("credit")) {
+
+        }
+        else if(st.equals("mainActivity"))
+        {
+            startActivity(backActivity);
+        }
+        return true;
     }
 }
